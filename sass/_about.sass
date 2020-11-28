@@ -1,0 +1,114 @@
+.about
+    scroll-behavior: smooth
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-column: 1/-1;
+
+    &__container
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+            
+            
+          
+        
+        &-imgcontainer
+            position: relative;
+            width: 50vh;
+            height: 40vh;
+
+            &:hover img
+                transform: translateY(0)
+                
+                
+            
+                
+            img
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transition: .4s ease;
+                
+
+            .image1
+                clip-path: polygon(0 0, 25% 0, 25% 100%, 0 100%)
+                transform: translateY(-10px)
+                
+            .image2
+                 clip-path: polygon(25% 0, 50% 0, 50% 100%, 25% 100%);
+                 transform: translateY(10px)
+
+
+            .image3
+                clip-path: polygon(50% 0, 75% 0, 75% 100%, 50% 100%);
+                transform: translateY(-10px)
+
+            .image4
+                 clip-path: polygon(75% 0, 100% 0, 100% 100%, 75% 100%);
+                 transform: translateY(10px);
+                
+                    
+                
+                
+            
+                  
+        &-textcontainer
+            grid-column: 2/8
+            grid-row: 3/4;
+            height: auto;
+            margin-top: 5rem;
+            max-width: 70rem;
+            p   
+                text-align: center;
+                font-size: 1.6rem;
+                letter-spacing: .1rem;
+                color: #333;
+                
+
+        &-mediacontainer
+            grid-row: 4/5;
+            grid-column: 3/7;
+            display: flex;
+            margin-top: 5rem;
+            width: 30rem;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            a
+                color: black;
+                font-size: 3rem;
+                transition: .4s;
+                &:hover
+                    color: #374453
+              
+    
+        &__skills
+            grid-column: 5/-1
+            background-color: #EEEEEE;
+            height: 100%;
+
+
+
+
+@media (max-width: 688px)
+
+    .about
+
+        &__container
+
+    
+            &-imgcontainer
+                width: 80%;
+            &-textcontainer
+                margin: 4.5rem 2.5rem 0 2.5rem;  
+            &-mediacontainer
+                margin-bottom: 2rem;

@@ -1,0 +1,6 @@
+img/
+node_modules/
+package-lock.json
+package.json
+sass/main.css
+main.css.map

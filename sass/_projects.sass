@@ -1,0 +1,125 @@
+.projects
+    grid-column: 1/-1;
+    background-color: $main-white-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    &__container
+        min-width: 40vh;
+        max-width: 120vh;
+        min-height: 25vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 10rem;
+        &-menu
+            display: flex;
+            flex-direction: row;
+            grid-column: 1/-1;
+            grid-row: 1/2;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+            &-item
+                font-size: 2rem;
+                cursor: pointer;
+                text-transform: uppercase;
+
+
+        &-project
+            height: 40vh;
+            width: 40vh;
+            background-color: black;
+            color: white;
+            text-align: center;
+            position: relative;
+            transition: .4s;
+            &:hover
+                background-color: $main-white-color;
+
+            &:hover &-text
+                transform: translate(-50%,5rem)
+                z-index: 2;
+                color: black;
+            &:hover &-button
+                transform: translate(-50%,-5rem)
+                z-index: 2;
+                color: black;
+        
+                
+                
+            &-text
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: -1;
+                transition: .4s;
+                h3
+                    font-size: 2.4rem;
+                    font-weight: bold;
+                h4
+                    font-size: 1.6rem;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    color: pink;
+
+            &-button
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: -1;
+                transition: .4s;
+                &:hover button 
+                    background-color: black;
+                    color: white;
+                
+                button 
+                    background-color: transparent;
+                    border: 2px solid black;
+                    padding: 1rem;
+                    text-transform: uppercase;
+                    font-size: 1.6rem;
+
+
+
+.xd
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+
+
+
+@media (min-width: 485px) and (max-width: 1024px)
+    .projects
+        &__container
+            max-width: 80vh;
+            &-menu
+                margin-bottom: 2rem;
+                &-item
+                    font-size: 1rem;
+            &-project
+
+
+@media (max-width: 485px)
+    .projects
+        &__container
+            width: 100%;
+            &-menu
+                margin-bottom: 2rem;
+                &-item
+                    font-size: 1rem;
+            &-project
+                width: 100%;
+                height: 50vh;
+                 

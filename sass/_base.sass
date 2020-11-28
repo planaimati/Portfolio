@@ -1,0 +1,78 @@
+
+*,*::after,*::before
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+
+
+html 
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+
+
+    
+    
+
+.container
+    display: grid;
+    grid-gap: 0;
+    width: 100%;
+    //display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 100vh 100vh  auto minmax(50vh, auto) auto 20rem;
+
+.main-header
+    text-transform: uppercase;
+    font-size: 2.6rem;
+    font-weight: 300;
+    color: #202E3E;
+
+.header-container
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%)
+    grid-column: 4/6
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+.underline
+    width: 6rem;
+    height: .4rem;
+    margin-top: 1rem;
+    background-color: black;
+
+
+.headerContainer
+    @include mainHeader
+    margin-bottom: 8rem;
+    margin-top: 5rem;
+    &-header
+        font-size: 2.6rem;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        color: $main-dark-color;
+    &-headersmall
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        font-weight: 500;
+
+
+@media (max-width: 688px)
+    .headerContainer
+        @include mainHeader
+        margin-bottom: 5rem;
+        margin-top: 3rem;
+
+
+.active
+    color: red;
+    

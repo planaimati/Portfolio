@@ -1,0 +1,97 @@
+.navbar
+    position: fixed;
+    top: 0;
+    left: 0
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: transparent;
+    height: 5rem;
+    z-index: 100;
+
+    &__burger
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 6rem;
+        height: 6rem;
+        cursor: pointer;
+        position: relative;
+        div
+            transition: .5s;
+            width: 4.5rem;
+            height: .5rem;
+            background-color: white;
+            border-radius: 5px;
+        div::before, div::after
+            content: '';
+            position: absolute;
+            transition: .5s
+            width: 4.5rem;
+            height: .5rem;
+            background-color: white;
+            border-radius: 5px;
+        div::before
+            transform: translateY(1.5rem)
+        div::after
+            transform: translateY(-1.5rem)
+    &__burger.active div
+        transform: translateX(-50px)
+        background: transparent;
+    &__burger.active div::before
+    
+        transform: rotate(45deg) translate(35px, -35px)
+    &__burger.active div::after
+          transform: rotate(-45deg) translate(35px, 35px)
+    
+    &__menu
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: -100vh;
+        height: 100vh;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+        transition: transform 1s;
+        &-item
+            list-style: none;
+            &-link 
+                text-decoration: none;
+                color: white;
+                font-size: 2rem;
+                letter-spacing: 0.5rem;
+                text-transform: uppercase;
+                font-weight: 500;
+                
+                
+
+@media (min-width: 688px)
+    .navbar
+        justify-content: flex-start;
+    .navbar__burger
+        display: none
+    .navbar__menu
+        flex-direction: row;
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        
+        
+      
+        
+             
+            
+.open
+    //transform: translateY(calc(50vh));
+    top: 0;
+    
+    
+    
+
+   

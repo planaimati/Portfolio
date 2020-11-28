@@ -1,0 +1,70 @@
+.skills
+    grid-column: 1/-1;
+    background-color: $main-white-color;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    
+
+
+    &__container
+        display: grid;
+        min-height: 60%;
+        width: 70%;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        gap: 3rem;
+    
+        &-skill
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            &-icon
+                i
+                    font-size: 6rem;
+                    color: $main-light-color;
+            &-header 
+                margin-top: 1rem;
+                h3
+                    font-size: 2rem;
+                    font-weight: 500;
+
+            &-text 
+                margin-top: 3rem;
+                p
+                    font-size: 1.6rem;
+                    text-align: center;
+                    color: $main-dark-color;
+@media (min-width: 400px) and (max-width: 1024px)
+    .skills
+        &__container
+            grid-template-columns: 1fr 1fr;
+            width: 90%;
+            &-skill
+                &:nth-child(6)
+                    margin-bottom: 2rem;
+                &:nth-child(5)
+                    margin-bottom: 2rem;
+            
+
+@media (max-width: 400px)
+    .skills
+        &__container
+            grid-template-columns: 1fr;
+            gap: 5rem;
+            width: 90%;
+            &-skill
+                width: 100%;
+                &-text 
+                    margin-top: 1rem;
+                &:nth-child(6)
+                    margin-bottom: 2rem;
+                   
+                
+                
