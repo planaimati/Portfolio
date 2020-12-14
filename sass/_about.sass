@@ -1,6 +1,6 @@
 .about
     scroll-behavior: smooth
-    height: 100vh;
+    maxheight: 150vh;
     width: 100%;
     background-color: white;
     display: flex;
@@ -8,6 +8,10 @@
     flex-direction: column;
     justify-content: flex-start;
     grid-column: 1/-1;
+    background-color: $main-white-color;
+    border-bottom: 2px solid #e4e4e4;
+    border-top: 2px solid black;
+    
 
     &__container
         display: flex;
@@ -99,7 +103,7 @@
 
 
 
-@media (max-width: 688px)
+@media (max-width: 485px)
 
     .about
 

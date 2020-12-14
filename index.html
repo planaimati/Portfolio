@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script
       src="https://kit.fontawesome.com/a344107c21.js"
       crossorigin="anonymous"
@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-
+    
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -27,14 +27,15 @@
             <a class="navbar__menu-item-link" href="#section2">about</a>
           </li>
           <li class="navbar__menu-item">
-            <a class="navbar__menu-item-link" href="#section3">portfolio</a>
+            <a class="navbar__menu-item-link" href="#section3">umiejętności</a>
           </li>
           <li class="navbar__menu-item">
-            <a class="navbar__menu-item-link" href="section4">contact</a>
+            <a class="navbar__menu-item-link" href="#section4">projekty</a>
           </li>
         </ul>
         <div class="navbar__burger">
-          <div class="navbar__burger-line"></div>
+          
+          <i class="fas fa-bars"></i>
         </div>
       </nav>
       <!-- home section -->
@@ -45,20 +46,20 @@
       </section>
       <!-- about section -->
       <section id="section2" class="about">
-        <div class="headerContainer">
+        <div class="headerContainer" data-aos="fade-left">
           <h2 class="headerContainer-header">about me</h2>
           <h4 class="headerContainer-headersmall">
             na początku porozmawiajmy o mnie
           </h4>
         </div>
         <div class="about__container">
-          <div class="about__container-imgcontainer">
+          <div class="about__container-imgcontainer" data-aos="fade-right">
             <img class="image1" src="/img/me.jpg" alt="" />
             <img class="image2" src="/img/me.jpg" alt="" />
             <img class="image3" src="/img/me.jpg" alt="" />
             <img class="image4" src="/img/me.jpg" alt="" />
           </div>
-          <div class="about__container-textcontainer">
+          <div class="about__container-textcontainer" data-aos="fade-left">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Exercitationem maxime architecto alias cumque repellendus
@@ -80,14 +81,14 @@
         </div>
       </section>
       <!-- skills section -->
-      <section class="skills">
-        <div class="headerContainer">
+      <section id="section3"class="skills">
+        <div class="headerContainer " data-aos="fade-left">
           <h2 class="headerContainer-header">moje umiejętności</h2>
           <h4 class="headerContainer-headersmall">
             czyli co potrafię a czego nie
           </h4>
         </div>
-        <div class="skills__container">
+        <div class="skills__container " data-aos="fade" data-aos-offset="250">
 
 
           <div class="skills__container-skill">
@@ -147,28 +148,40 @@
           </div>
       </section>
       <!-- projects -->
-      <section class="projects">
-        <div class="headerContainer">
+      <section id="section4" class="projects">
+        <div class="headerContainer " data-aos="fade-left">
           <h2 class="headerContainer-header">projekty</h2>
           <h4 class="headerContainer-headersmall">
             czyli mniej bądź bardziej ciekawe 
           </h4>
         </div>
         <div class="projects__container">
-          <div class="projects__container-menu">
+          <div class="projects__container-menu" data-aos="fade" data-aos-offset="250">
             <div class="projects__container-menu-item active">ALL</div>
             <div class="projects__container-menu-item">JavaScript</div>
             <div class="projects__container-menu-item">React</div>
           </div>
           
-          <div class="xd">
+          <div class="xd" data-aos="fade-up" data-aos-offset="350" data-aos-once="true">
             <div class="projects__container-project react">
+              <img src="./img/ballerbay.png" alt="">
+              <div class="projects__container-project-text">
+                
+                <h3>tytuł</h3>
+                <h4>technologie</h4>
+              </div>
+              <div class="projects__container-project-button">
+                <button data-id='reactshop'class="popup-button">zobacz więcej</button>
+              </div>    
+            </div>
+            <div class="projects__container-project react">
+              <img src="./img/portfolio.png" alt="">
               <div class="projects__container-project-text">
                 <h3>tytuł</h3>
                 <h4>technologie</h4>
               </div>
               <div class="projects__container-project-button">
-                <button>zobacz więcej</button>
+                <button data-id='reacttodo' class="popup-button">zobacz więcej</button>
               </div>    
             </div>
             <div class="projects__container-project react">
@@ -177,16 +190,7 @@
                 <h4>technologie</h4>
               </div>
               <div class="projects__container-project-button">
-                <button>zobacz więcej</button>
-              </div>    
-            </div>
-            <div class="projects__container-project react">
-              <div class="projects__container-project-text">
-                <h3>tytuł</h3>
-                <h4>technologie</h4>
-              </div>
-              <div class="projects__container-project-button">
-                <button>zobacz więcej</button>
+                <button data-id='jsaboutme' class="popup-button">zobacz więcej</button>
               </div>    
             </div>
             <div class="projects__container-project js">
@@ -195,7 +199,7 @@
                 <h4>technologie</h4>
               </div>
               <div class="projects__container-project-button">
-                <button>zobacz więcej</button>
+                <button class="popup-button" data="xd">zobacz więcej</button>
               </div>    
             </div>
             <div class="projects__container-project js">
@@ -204,7 +208,7 @@
                 <h4>technologie</h4>
               </div>
               <div class="projects__container-project-button">
-                <button>zobacz więcej</button>
+                <button class="popup-button">zobacz więcej</button>
               </div>    
             </div>
             <div class="projects__container-project js">
@@ -213,18 +217,72 @@
                 <h4>technologie</h4>
               </div>
               <div class="projects__container-project-button">
-                <button>zobacz więcej</button>
+                <button class="popup-button">zobacz więcej</button>
               </div>    
             </div>
           </div>
           
         </div>
+        <!-- popup -->
+        <div class="popup">
+          <div class="popup__container">
+            <div class="popup__container-image">
+              <img class="popupImg"src="https://cdn.pixabay.com/photo/2020/12/01/21/20/beach-5795560_960_720.jpg" alt="">
+            </div>
+            <div class="popup__container-items">
+              <div class="popup__container-items-header">
+                <h1 class="headerName">nazwa projektu</h1>
+              </div>
+              <div class="popup__container-items-desc">
+                <p class="popupDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur magnam quos deserunt? Excepturi, tempora aperiam. Debitis corporis repudiandae culpa magni.</p>
+              </div>
+              <div class="popup__container-items-buttons">
+
+                <button class="popup__container-items-buttons-github">
+                  <a href="https://github.com/planaimati/portfolio.git">github</a>
+                </button>
+                <button class="popup__container-items-buttons-live">
+                  <a href="#">live</a>
+                </button>
+
+                <div class="popup__container-items-buttons-closeButton">
+                  <i class="fas fa-times"></i>
+                </div>
+              </div>
+            </div>
+            
+
+          </div>
+        </div>
       </section>
-      <section class="contact"></section>
-      <footer class="footer"></footer>
+      <!-- footer -->
+      <footer class="footer">
+        
+        <div class="footer__scroll">
+          <div class="footer__scroll-arrow">
+            <i class="fas fa-chevron-up"></i>
+          </div>
+        </div>
+        <div class="footer__email"><p>inco.adizero@gmail.com</p></div>
+        <div class="footer__media">
+          <a href="https://www.instagram.com/matavzz/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href=""><i class="fab fa-github"></i></a>
+            <a href=""><i class="fab fa-linkedin-in"></i></a>
+            <a href=""><i class="fab fa-facebook-square"></i></a>
+            <a href="mailto: mateusz.ples@yahoo.com"
+              ><i class="far fa-envelope"></i>
+            </a>
+        </div>
+        <div class="footer__info"><p>Mateusz Ples &copy;</p></div>
+      </footer>
     </div>
-    <script src="js/Menu.js"></script>
-    <script src="js/Projects.js"></script>
-    <script src="js/app.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script  src="js/app.js"></script>
+    
+    
   </body>
 </html>

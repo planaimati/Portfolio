@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+    -webkit-backface-visibility: hidden;
 
 
 
@@ -13,7 +14,10 @@ html
     font-family: 'Lato', sans-serif;
 
 
-    
+body
+    width: 100%;
+
+
     
 
 .container
@@ -23,9 +27,10 @@ html
     //display: flex;
     flex-direction: column;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 100vh 100vh  auto minmax(50vh, auto) auto 20rem;
+    grid-template-rows: 100vh 100vh  auto minmax(50vh, auto) 20vh;
+    overflow-x: hidden;
 
-.main-header
+@mixin main-header
     text-transform: uppercase;
     font-size: 2.6rem;
     font-weight: 300;
@@ -51,7 +56,7 @@ html
 .headerContainer
     @include mainHeader
     margin-bottom: 8rem;
-    margin-top: 5rem;
+    margin-top: 7rem;
     &-header
         font-size: 2.6rem;
         letter-spacing: .1rem;
@@ -65,14 +70,30 @@ html
         letter-spacing: .3rem;
         font-weight: 500;
 
-
-@media (max-width: 688px)
-    .headerContainer
-        @include mainHeader
-        margin-bottom: 5rem;
-        margin-top: 3rem;
-
-
 .active
     color: red;
     
+
+@media (min-width: 485px) and (max-width: 1024px)
+    .headerContainer
+        &-header
+            font-size: 3rem;
+        &-headersmall
+            font-size: 1.8rem;
+
+
+
+
+@media (max-width: 485px)
+    .headerContainer
+        @include mainHeader
+        margin: 3rem 1rem 5rem 1rem;
+
+        &-header
+            font-size: 2.2rem;
+        &-headersmall
+            font-size: 1rem;
+        
+        
+
+

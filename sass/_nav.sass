@@ -1,48 +1,37 @@
 .navbar
     position: fixed;
     top: 0;
-    left: 0
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: flex-end;
     background-color: transparent;
     height: 5rem;
     z-index: 100;
+    align-items: center;
+    
 
     &__burger
-        
         display: flex;
         align-items: center;
-        justify-content: center;
-        width: 6rem;
-        height: 6rem;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 5rem;
+        height: 5rem;
         cursor: pointer;
-        position: relative;
-        div
-            transition: .5s;
-            width: 4.5rem;
-            height: .5rem;
-            background-color: white;
-            border-radius: 5px;
-        div::before, div::after
-            content: '';
-            position: absolute;
-            transition: .5s
-            width: 4.5rem;
-            height: .5rem;
-            background-color: white;
-            border-radius: 5px;
-        div::before
-            transform: translateY(1.5rem)
-        div::after
-            transform: translateY(-1.5rem)
-    &__burger.active div
+        z-index: 99;
+        i
+            font-size: 3.5rem;
+            line-height: 5rem;
+            color: white;
+        
+    &__burger.active .line2
         transform: translateX(-50px)
         background: transparent;
-    &__burger.active div::before
+    &__burger.active .line1
     
         transform: rotate(45deg) translate(35px, -35px)
-    &__burger.active div::after
+    &__burger.active .line3
           transform: rotate(-45deg) translate(35px, 35px)
     
     &__menu
@@ -83,8 +72,7 @@
         height: 100%;
         
         
-      
-        
+  
              
             
 .open

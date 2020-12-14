@@ -1,3 +1,22 @@
+@mixin popupButton
+    height: 5rem;
+    width: 13rem;
+    border: 2px solid black;
+@mixin popupLink
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    display: block;
+    text-align: center;
+    height: 100%;
+    line-height: 5rem;
+    
+    
+    
+    
 .projects
     grid-column: 1/-1;
     background-color: $main-white-color;
@@ -5,10 +24,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
+    scroll-behavior: smooth;
+    border-top: 2px solid #e4e4e4;
+    border-bottom: 2px solid #e4e4e4;
+    
     
     &__container
         min-width: 40vh;
-        max-width: 120vh;
+        max-width: 150vh;
         min-height: 25vh;
         display: flex;
         align-items: center;
@@ -20,7 +44,7 @@
             flex-direction: row;
             grid-column: 1/-1;
             grid-row: 1/2;
-            width: 100%;
+            width: 80%;
             align-items: center;
             justify-content: space-around;
             margin-bottom: 2rem;
@@ -32,14 +56,20 @@
 
         &-project
             height: 40vh;
-            width: 40vh;
-            background-color: black;
+            width: 50vh;
             color: white;
             text-align: center;
             position: relative;
             transition: .4s;
-            &:hover
-                background-color: $main-white-color;
+            img 
+                height: 100%;
+                width: 100%;
+                transition: .4s;
+                opacity: 1;
+
+            
+            &:hover img
+                opacity: 0;
 
             &:hover &-text
                 transform: translate(-50%,5rem)
@@ -97,6 +127,91 @@
     align-items: center;
     justify-content: center;
 
+.popup
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    width: 40vw;
+    z-index: 2;
+    background-color: white;
+    box-shadow: 0px 1px 13px 2px rgba(0,0,0,0.31);
+    
+    
+
+    &__container
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &-image
+            width: 100%;
+            height: 60%;
+            border-bottom: .5rem solid black;
+            img
+                width: 100%;
+                height: 100%;
+        &-items
+            height: 40%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+            
+            &-header
+                height: 40%;
+                width: 95%
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid black;
+               
+                h1
+                    font-size: 3rem;
+                    margin-left: 3rem;
+                    
+                    
+            &-desc
+                height: 50%;
+                margin: 0 5rem 0 5rem;
+                p
+                    font-size: 2.2rem;
+                    text-align: center;
+                    margin-top: 1.5rem;
+                    font-weight: 300;
+            &-buttons
+                height: 30%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                &-github
+                    @include popupButton
+                    
+                    a
+                        @include popupLink
+                &-live
+                    @include popupButton
+                    a
+                        @include popupLink
+                               
+                        
+                &-closeButton
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    padding: .5rem;
+                    cursor: pointer ;
+                    i
+                        font-size: 2rem;
+
+
+.activePopup
+    display: block;
 
 
 
@@ -106,9 +221,21 @@
             max-width: 80vh;
             &-menu
                 margin-bottom: 2rem;
+                width: 80%;
+                
                 &-item
-                    font-size: 1rem;
+                    font-size: 2rem;
             &-project
+    .popup
+        height: 80vh;
+        width: 80%;
+        position: fixed;
+        &__container
+            &-image
+                height: 50%;
+            &-items
+                height: 50%;
+    
 
 
 @media (max-width: 485px)
@@ -117,9 +244,22 @@
             width: 100%;
             &-menu
                 margin-bottom: 2rem;
+                
                 &-item
                     font-size: 1rem;
             &-project
                 width: 100%;
-                height: 50vh;
-                 
+                height: 40vh;
+    .popup
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        &__container
+            &-image
+                height: 40%;
+            &-items
+                height: 60%;
+                &-desc
+                    margin: 0 2rem 0 2rem;
+
+        
