@@ -19,7 +19,7 @@ body {
   width: 100%;
   flex-direction: column;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 100vh 100vh auto minmax(50vh, auto) 20vh;
+  grid-template-rows: 100vh minmax(25vh, auto) auto minmax(25vh, auto) 20vh;
   overflow-x: hidden; }
 
 .header-container {
@@ -52,7 +52,7 @@ body {
     text-transform: uppercase;
     font-weight: 300;
     margin-bottom: 1rem;
-    color: #012739; }
+    color: #171d23; }
   .headerContainer-headersmall {
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -81,7 +81,7 @@ body {
       font-size: 1rem; } }
 
 .home {
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url(../img/bgc8.jpg);
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url(https://i.ibb.co/fxPK1Vz/bgc6.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -97,6 +97,14 @@ body {
     color: white;
     font-size: 5.5rem;
     font-weight: 300; }
+
+@media (min-width: 400px) and (max-width: 1024px) {
+  .home__header-container-big {
+    font-size: 4rem; } }
+
+@media (max-width: 400px) {
+  .home__header-container-big {
+    font-size: 2.5rem; } }
 
 .about {
   scroll-behavior: smooth;
@@ -116,7 +124,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 2rem; }
     .about__container-imgcontainer {
       position: relative;
       width: 50vh;
@@ -275,7 +284,10 @@ body {
       width: 100%; }
       .skills__container-skill-icon i {
         font-size: 6rem;
-        color: #04ADB8; }
+        color: #171d23;
+        transition: .4s; }
+      .skills__container-skill:hover i {
+        color: #2c3640; }
       .skills__container-skill-header {
         margin-top: 1rem; }
         .skills__container-skill-header h3 {
@@ -286,7 +298,7 @@ body {
         .skills__container-skill-text p {
           font-size: 1.6rem;
           text-align: center;
-          color: #012739; }
+          color: #171d23; }
 
 @media (min-width: 400px) and (max-width: 1024px) {
   .skills__container {
@@ -319,7 +331,8 @@ body {
   position: relative;
   scroll-behavior: smooth;
   border-top: 2px solid #e4e4e4;
-  border-bottom: 2px solid #e4e4e4; }
+  border-bottom: 2px solid #e4e4e4;
+  grid-row: 4/6; }
   .projects__container {
     min-width: 40vh;
     max-width: 150vh;
@@ -334,14 +347,15 @@ body {
       flex-direction: row;
       grid-column: 1/-1;
       grid-row: 1/2;
-      width: 80%;
+      width: 80vh;
       align-items: center;
       justify-content: space-around;
       margin-bottom: 2rem; }
       .projects__container-menu-item {
         font-size: 2rem;
         cursor: pointer;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        color: #171d23; }
     .projects__container-project {
       height: 40vh;
       width: 50vh;
@@ -359,33 +373,38 @@ body {
       .projects__container-project:hover .projects__container-project-text {
         transform: translate(-50%, 5rem);
         z-index: 2;
-        color: black; }
+        color: black;
+        opacity: 1; }
       .projects__container-project:hover .projects__container-project-button {
         transform: translate(-50%, -5rem);
         z-index: 2;
-        color: black; }
+        color: black;
+        opacity: 1; }
       .projects__container-project-text {
         position: absolute;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
         z-index: -1;
-        transition: .4s; }
+        transition: .4s;
+        opacity: 0; }
         .projects__container-project-text h3 {
           font-size: 2.4rem;
-          font-weight: bold; }
+          font-weight: bold;
+          color: #171d23; }
         .projects__container-project-text h4 {
           font-size: 1.6rem;
           text-transform: uppercase;
           font-weight: 300;
-          color: pink; }
+          color: #324558; }
       .projects__container-project-button {
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
         z-index: -1;
-        transition: .4s; }
+        transition: .4s;
+        opacity: 0; }
         .projects__container-project-button:hover button {
           background-color: black;
           color: white; }
@@ -461,7 +480,8 @@ body {
         .popup__container-items-buttons-github {
           height: 5rem;
           width: 13rem;
-          border: 2px solid black; }
+          border: none;
+          background-color: transparent; }
           .popup__container-items-buttons-github a {
             text-decoration: none;
             font-size: 1.2rem;
@@ -476,7 +496,8 @@ body {
         .popup__container-items-buttons-live {
           height: 5rem;
           width: 13rem;
-          border: 2px solid black; }
+          border: none;
+          background-color: transparent; }
           .popup__container-items-buttons-live a {
             text-decoration: none;
             font-size: 1.2rem;

@@ -1,7 +1,9 @@
 @mixin popupButton
     height: 5rem;
     width: 13rem;
-    border: 2px solid black;
+    border: none;
+    background-color: transparent;
+    
 @mixin popupLink
     text-decoration: none;
     font-size: 1.2rem;
@@ -28,6 +30,8 @@
     scroll-behavior: smooth;
     border-top: 2px solid #e4e4e4;
     border-bottom: 2px solid #e4e4e4;
+    grid-row: 4/6
+    
     
     
     &__container
@@ -44,7 +48,7 @@
             flex-direction: row;
             grid-column: 1/-1;
             grid-row: 1/2;
-            width: 80%;
+            width: 80vh;
             align-items: center;
             justify-content: space-around;
             margin-bottom: 2rem;
@@ -52,6 +56,7 @@
                 font-size: 2rem;
                 cursor: pointer;
                 text-transform: uppercase;
+                color: #171d23;
 
 
         &-project
@@ -75,10 +80,12 @@
                 transform: translate(-50%,5rem)
                 z-index: 2;
                 color: black;
+                opacity: 1;
             &:hover &-button
                 transform: translate(-50%,-5rem)
                 z-index: 2;
                 color: black;
+                opacity: 1;
         
                 
                 
@@ -89,14 +96,16 @@
                 transform: translateX(-50%);
                 z-index: -1;
                 transition: .4s;
+                opacity: 0;
                 h3
                     font-size: 2.4rem;
                     font-weight: bold;
+                    color: #171d23;
                 h4
                     font-size: 1.6rem;
                     text-transform: uppercase;
                     font-weight: 300;
-                    color: pink;
+                    color:#324558
 
             &-button
                 position: absolute;
@@ -105,6 +114,7 @@
                 transform: translateX(-50%);
                 z-index: -1;
                 transition: .4s;
+                opacity: 0;
                 &:hover button 
                     background-color: black;
                     color: white;

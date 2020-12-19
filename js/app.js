@@ -30,7 +30,7 @@ class Projects {
           project.style.display = "block";
         }
       });
-    } else if (e.target.textContent === "ALL") {
+    } else if (e.target.textContent === "Wszystko") {
       e.target.classList.add("active");
       this.projects.forEach((project) => {
         project.style.display = "block";
@@ -49,7 +49,17 @@ class Projects {
 }
 
 class Popup {
-  constructor(popupButton, popup, closeButton, img, name, desc, container) {
+  constructor(
+    popupButton,
+    popup,
+    closeButton,
+    img,
+    name,
+    desc,
+    container,
+    github,
+    live
+  ) {
     this.popupButton = popupButton;
     this.popup = popup;
     this.closeButton = closeButton;
@@ -57,6 +67,8 @@ class Popup {
     this.name = name;
     this.desc = desc;
     this.container = container;
+    this.github = github;
+    this.live = live;
   }
 
   init = () => {
@@ -74,17 +86,25 @@ class Popup {
   showPopup = (e) => {
     console.log(e.target.dataset.id);
     if (e.target.dataset.id === "reactshop") {
-      this.img.src =
-        "https://cdn.pixabay.com/photo/2020/11/22/08/06/forest-5765878_960_720.jpg";
-      this.name.innerText = "lorem lorem";
+      this.img.src = "https://i.ibb.co/X2dZdjr/ballerbay.png";
+      this.name.innerText = "BallerBay";
       this.desc.innerText =
-        " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, iure. Voluptatibus, sequi esse, voluptatum eum aliquam, dicta ab vitae minima vel a doloremque unde? Libero necessitatibus nostrum aut officiis consequatur. ";
-    } else if (e.target.dataset.id === "reacttodo") {
-      this.img.src =
-        "https://cdn.pixabay.com/photo/2020/12/02/16/01/beech-5798039_960_720.jpg";
-      this.name.innerText = " Lorem, ipsum. ";
+        "Projekt który realizowałem w ramach pracy inżynierskiej, napisany w React.js, z wykorzystaniem Styled Components, oraz biblioteki Redux która odpowiada za zarządzanie stanem aplikacji. Zawartość sklepu pobierana jest z NetlifyCMS, który umożliwia dynamiczne zarządzanie treścią";
+      this.github.href = "https://github.com/planaimati/BallerBay";
+      this.live.href = "https://ballerbay.netlify.app/";
+    } else if (e.target.dataset.id === "portfolio") {
+      this.img.src = "https://i.ibb.co/6sRHm55/portfolio.png";
+      this.name.innerText = " Portfolio ";
       this.desc.innerText =
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum blanditiis provident dicta quod consequatur voluptatem ipsa autem dolore, sit error? ";
+        "Projekt napisany w JS z użyciem preprocesora Sass i biblioteki AOS która odpowiada za animacje, planuję wrzucać tutaj ciekawsze projekty które uda mi się stworzyć w przyszłości ";
+      this.github.href = "https://github.com/planaimati/portfolio";
+      this.live.href = "#";
+    } else if (e.target.dataset.id === "tictactoe") {
+      this.img.src = "https://i.ibb.co/9pzCkvL/tictactoe.png";
+      this.name.innerText = " Kółko i krzyżyk ";
+      this.desc.innerText = "Prosta gra w kółko i krzyżyk, napisana w JS";
+      this.github.href = "https://github.com/planaimati/kolko-krzyzyk";
+      this.live.href = "https://planaimati.github.io/kolko-krzyzyk/";
     }
 
     this.popup.classList.add("activePopup");
@@ -182,7 +202,9 @@ const popup = new Popup(
   document.querySelector(".popupImg"),
   document.querySelector(".headerName"),
   document.querySelector(".popupDesc"),
-  document.querySelector(".container")
+  document.querySelector(".container"),
+  document.querySelector(".git"),
+  document.querySelector(".live")
 );
 
 menu.init();
