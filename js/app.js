@@ -86,21 +86,21 @@ class Popup {
   showPopup = (e) => {
     console.log(e.target.dataset.id);
     if (e.target.dataset.id === "reactshop") {
-      this.img.src = "https://i.ibb.co/2jgrMvD/ballerbay.png";
+      this.img.src = "../img/ballerbay.png";
       this.name.innerText = "BallerBay";
       this.desc.innerText =
         "Projekt który realizowałem w ramach pracy inżynierskiej, napisany w React.js, z wykorzystaniem Styled Components, oraz biblioteki Redux która odpowiada za zarządzanie stanem aplikacji. Zawartość sklepu pobierana jest z NetlifyCMS, który umożliwia dynamiczne zarządzanie treścią";
       this.github.href = "https://github.com/planaimati/BallerBay";
       this.live.href = "https://ballerbay.netlify.app/";
     } else if (e.target.dataset.id === "portfolio") {
-      this.img.src = "https://i.ibb.co/xqk2vDt/portfolio.png";
+      this.img.src = "../img/portfolio.png";
       this.name.innerText = " Portfolio ";
       this.desc.innerText =
         "Projekt napisany w JS z użyciem preprocesora Sass i biblioteki AOS która odpowiada za animacje, planuję wrzucać tutaj ciekawsze projekty które uda mi się stworzyć w przyszłości ";
       this.github.href = "https://github.com/planaimati/portfolio";
       this.live.href = "#";
     } else if (e.target.dataset.id === "tictactoe") {
-      this.img.src = "https://i.ibb.co/PGYc33q/tictactoe.png";
+      this.img.src = "../img/tictactoe.png";
       this.name.innerText = " Kółko i krzyżyk ";
       this.desc.innerText = "Prosta gra w kółko i krzyżyk, napisana w JS";
       this.github.href = "https://github.com/planaimati/kolko-krzyzyk";
