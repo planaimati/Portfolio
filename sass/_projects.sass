@@ -1,275 +1,103 @@
-@mixin popupButton
-    height: 5rem;
-    width: 13rem;
-    border: none;
-    background-color: transparent;
-    
-@mixin popupLink
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: black;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    display: block;
-    text-align: center;
-    height: 100%;
-    line-height: 5rem;
-    
+
     
     
     
 .projects
     grid-column: 1/-1;
+    height: 200vh;
+    width: 100%;
     background-color: $main-white-color;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
     position: relative;
     scroll-behavior: smooth;
     border-top: 2px solid #e4e4e4;
     border-bottom: 2px solid #e4e4e4;
-    grid-row: 4/6
-    
-    
-    
-    &__container
-        min-width: 40vh;
-        max-width: 150vh;
-        min-height: 25vh;
+    grid-row: 4/6;
+
+    &__singleProject
+        width: 50%;
+        height: 50rem;
+        background-color: white;
+        border-radius: 20px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-bottom: 10rem;
-        &-menu
+
+        &-desc
             display: flex;
-            flex-direction: row;
-            grid-column: 1/-1;
-            grid-row: 1/2;
-            width: 80vh;
-            align-items: center;
-            justify-content: space-around;
-            margin-bottom: 2rem;
-            &-item
-                font-size: 2rem;
-                cursor: pointer;
-                text-transform: uppercase;
-                color: #171d23;
-
-
-        &-project
-            height: 40vh;
-            width: 50vh;
-            color: white;
-            text-align: center;
-            position: relative;
-            transition: .4s;
-            img 
-                height: 100%;
-                width: 100%;
-                transition: .4s;
-                opacity: 1;
-
-            
-            &:hover img
-                opacity: 0;
-
-            &:hover &-text
-                transform: translate(-50%,5rem)
-                z-index: 2;
-                color: black;
-                opacity: 1;
-            &:hover &-button
-                transform: translate(-50%,-5rem)
-                z-index: 2;
-                color: black;
-                opacity: 1;
-        
-                
-                
-            &-text
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                z-index: -1;
-                transition: .4s;
-                opacity: 0;
-                h3
-                    font-size: 2.4rem;
-                    font-weight: bold;
-                    color: #171d23;
-                h4
-                    font-size: 1.6rem;
-                    text-transform: uppercase;
-                    font-weight: 300;
-                    color:#324558
-
-            &-button
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                z-index: -1;
-                transition: .4s;
-                opacity: 0;
-                &:hover button 
-                    background-color: black;
-                    color: white;
-                
-                button 
-                    background-color: transparent;
-                    border: 2px solid black;
-                    padding: 1rem;
-                    text-transform: uppercase;
-                    font-size: 1.6rem;
-
-
-
-.xd
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-
-.popup
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 80vh;
-    width: 40vw;
-    z-index: 2;
-    background-color: white;
-    box-shadow: 0px 1px 13px 2px rgba(0,0,0,0.31);
-    
-    
-
-    &__container
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-
-        &-image
-            width: 100%;
-            height: 60%;
-            border-bottom: .5rem solid black;
-            img
-                width: 100%;
-                height: 100%;
-        &-items
-            height: 40%;
-            width: 100%;
-            display: flex;
+            width: 50%;
+            height: 100%;
             flex-direction: column;
-            position: relative;
             align-items: center;
-            
-            &-header
-                height: 40%;
-                width: 95%
+            justify-content: center;
+
+            &-text
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                border-bottom: 1px solid black;
-               
-                h1
-                    font-size: 3rem;
-                    margin-left: 3rem;
-                    
-                    
-            &-desc
-                height: 50%;
-                margin: 0 5rem 0 5rem;
-                p
-                    font-size: 2.2rem;
-                    text-align: center;
-                    margin-top: 1.5rem;
+                justify-content: center;
+                width: 70%;
+
+                &-header
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-size: 3.5rem;
+                    text-transform: capitalize;
+                    font-weight: 700;
+                    margin-bottom: 1.5rem;
+
+
+                &-paragraph
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-size: 1.8rem;
                     font-weight: 300;
-            &-buttons
-                height: 30%;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
+                    margin-bottom: 1.5rem;
+                    letter-spacing: .1rem;
 
-                &-github
-                    @include popupButton
-                    
-                    a
-                        @include popupLink
-                &-live
-                    @include popupButton
-                    a
-                        @include popupLink
-                               
-                        
-                &-closeButton
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    padding: .5rem;
-                    cursor: pointer ;
-                    i
-                        font-size: 2rem;
+            &-button                
+                background: linear-gradient(to right, #55FFEA 0%,  #46DFCD  100%);
+                margin: 10px;
+                padding: 15px 25px;
+                font-family: 'IBM Plex Sans', sans-serif;
+                font-size: 1.2rem;
+                letter-spacing: .1rem;
+                text-align: center;
+                text-transform: uppercase;
+                transition: 0.5s;
+                width: 50%;
+                color: white;            
+                box-shadow: 0 0 20px #eee;
+                border-radius: 10px;
+                display: block;
+          
+
+          
+         
 
 
-.activePopup
-    display: block;
+        &-img
 
+            background-image: url('https://cdn.pixabay.com/photo/2014/09/14/18/04/dandelion-445228_960_720.jpg');
+            width: 50%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 20px 0 0 20px;
 
+            &-right
+                border-radius: 0 20px 20px 0;
+                background-image: url('https://cdn.pixabay.com/photo/2014/09/14/18/04/dandelion-445228_960_720.jpg');
+                width: 50%;
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
 
-@media (min-width: 485px) and (max-width: 1024px)
-    .projects
-        &__container
-            max-width: 80vh;
-            &-menu
-                margin-bottom: 2rem;
-                width: 80%;
-                
-                &-item
-                    font-size: 2rem;
-            &-project
-    .popup
-        height: 80vh;
-        width: 80%;
-        position: fixed;
-        &__container
-            &-image
-                height: 50%;
-            &-items
-                height: 50%;
-    
-
-
-@media (max-width: 485px)
-    .projects
-        &__container
-            width: 100%;
-            &-menu
-                margin-bottom: 2rem;
-                
-                &-item
-                    font-size: 1rem;
-            &-project
-                width: 100%;
-                height: 40vh;
-    .popup
-        height: 100vh;
-        width: 100%;
-        position: fixed;
-        &__container
-            &-image
-                height: 40%;
-            &-items
-                height: 60%;
-                &-desc
-                    margin: 0 2rem 0 2rem;
 
         
+
+    
+    
+    
+    
