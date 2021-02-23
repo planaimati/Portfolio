@@ -72,5 +72,3 @@ const menu = new Menu(
 );
 
 menu.init();
-projects.init();
-popup.init();
