@@ -138,8 +138,7 @@ body {
 }
 
 .home {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.3))), url("https://images.pexels.com/photos/2096622/pexels-photo-2096622.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url("https://images.pexels.com/photos/2096622/pexels-photo-2096622.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-image: url("https://cdn.pixabay.com/photo/2021/01/05/06/40/boat-5889919_960_720.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -159,12 +158,20 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-attachment: fixed;
+  position: relative;
+}
+
+.home__header-container {
+  position: absolute;
+  bottom: 10rem;
+  left: 10rem;
 }
 
 .home__header-container-big {
+  font-family: 'IBM Plex Sans', sans-serif;
   color: white;
-  font-size: 5.5rem;
-  font-weight: 300;
+  font-size: 20rem;
+  font-weight: 700;
 }
 
 @media (min-width: 400px) and (max-width: 1024px) {
@@ -284,7 +291,10 @@ body {
 
 .about__container-textcontainer p {
   text-align: center;
-  font-size: 1.6rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
   letter-spacing: .1rem;
   color: #333;
 }
@@ -315,12 +325,12 @@ body {
 .about__container-mediacontainer a {
   color: black;
   font-size: 3rem;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .about__container-mediacontainer a:hover {
-  color: #374453;
+  color: #333;
 }
 
 .about__container__skills {
@@ -353,7 +363,7 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   background-color: transparent;
-  height: 5rem;
+  height: 10rem;
   z-index: 100;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -506,14 +516,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  height: 30rem;
 }
 
 .skills__container-skill-icon i {
@@ -541,9 +552,11 @@ body {
 }
 
 .skills__container-skill-text p {
-  font-size: 1.6rem;
-  text-align: center;
-  color: #171d23;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: .1rem;
+  color: #626881;
 }
 
 @media (min-width: 400px) and (max-width: 1024px) {
@@ -580,7 +593,7 @@ body {
 
 .projects {
   grid-column: 1/-1;
-  height: 200vh;
+  min-height: 200vh;
   width: 100%;
   background-color: #EDEDF0;
   display: -webkit-box;
@@ -593,8 +606,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   position: relative;
   scroll-behavior: smooth;
   border-top: 2px solid #e4e4e4;
@@ -605,13 +619,29 @@ body {
 }
 
 .projects__singleProject {
-  width: 50%;
+  width: 85rem;
   height: 50rem;
   background-color: white;
   border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 20rem;
+}
+
+@media (max-width: 900px) {
+  .projects__singleProject {
+    width: 95%;
+  }
+}
+
+@media (max-width: 750px) {
+  .projects__singleProject {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .projects__singleProject-desc {
@@ -630,6 +660,12 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 750px) {
+  .projects__singleProject-desc {
+    width: 100%;
+  }
 }
 
 .projects__singleProject-desc-text {
@@ -663,16 +699,15 @@ body {
   font-weight: 300;
   margin-bottom: 1.5rem;
   letter-spacing: .1rem;
+  text-align: center;
 }
 
 .projects__singleProject-desc-button {
-  background: -webkit-gradient(linear, left top, right top, from(#55FFEA), to(#46DFCD));
-  background: linear-gradient(to right, #55FFEA 0%, #46DFCD 100%);
   margin: 10px;
   padding: 15px 25px;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: .1rem;
+  font-size: 1.3rem;
+  letter-spacing: .2rem;
   text-align: center;
   text-transform: uppercase;
   -webkit-transition: 0.5s;
@@ -683,26 +718,118 @@ body {
           box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#46DFCD), to(#55FFEA));
+  background: linear-gradient(to right, #46DFCD 0%, #55FFEA 100%);
+}
+
+.projects__singleProject-desc-button:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+}
+
+.projects__singleProject-desc-button-purple {
+  margin: 10px;
+  padding: 15px 25px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: .2rem;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 50%;
+  color: white;
+  -webkit-box-shadow: 0 0 20px #eee;
+          box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#6E75F9), to(#9B9CF9));
+  background: linear-gradient(to right, #6E75F9 0%, #9B9CF9 100%);
+}
+
+.projects__singleProject-desc-button-purple:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
 }
 
 .projects__singleProject-img {
   background-image: url("https://cdn.pixabay.com/photo/2014/09/14/18/04/dandelion-445228_960_720.jpg");
+  border-radius: 20px 0 0 20px;
+  width: 50%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 750px) {
+  .projects__singleProject-img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+.projects__singleProject-img-right {
+  width: 50%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0 20px 20px 0;
+  background-image: url("https://images.pexels.com/photos/2166927/pexels-photo-2166927.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+}
+
+@media (max-width: 750px) {
+  .projects__singleProject-img-right {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
+.projects__singleProject-img-third {
   width: 50%;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px 0 0 20px;
+  background-image: url("https://images.pexels.com/photos/2318025/pexels-photo-2318025.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260x");
 }
 
-.projects__singleProject-img-right {
-  border-radius: 0 20px 20px 0;
-  background-image: url("https://cdn.pixabay.com/photo/2014/09/14/18/04/dandelion-445228_960_720.jpg");
+@media (max-width: 750px) {
+  .projects__singleProject-img-third {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
+.projects__singleProject-img-last {
   width: 50%;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 0 20px 20px 0;
+  background-image: url("https://images.pexels.com/photos/3490347/pexels-photo-3490347.jpeg?cs=srgb&dl=pexels-mister-mister-3490347.jpg&fm=jpg");
+  background-position: left;
+}
+
+@media (max-width: 750px) {
+  .projects__singleProject-img-last {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
 }
 
 .footer {
@@ -710,7 +837,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 20vh;
+  height: 40vh;
   grid-column: 1/-1;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -729,6 +856,7 @@ body {
   width: 5rem;
   cursor: pointer;
   text-align: center;
+  margin-bottom: 10vh;
 }
 
 .footer__scroll i {

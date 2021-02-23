@@ -1,16 +1,55 @@
+@mixin  item
+    width: 50%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+
+@mixin mainButton
+
+        margin: 10px;
+        padding: 15px 25px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: .2rem;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        width: 50%;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+        cursor: pointer;
+
+        &:hover
+            filter: brightness(1.1)
+
+@mixin projectMQ
+    @media(max-width: 900px)
+        width: 95%;
+    @media(max-width: 750px)
+        flex-direction: column;
+
+
+@mixin itemMQ
+    @media(max-width: 750px)
+        width: 100%;    
 
     
     
     
 .projects
     grid-column: 1/-1;
-    height: 200vh;
+    min-height: 200vh;
     width: 100%;
     background-color: $main-white-color;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     position: relative;
     scroll-behavior: smooth;
     border-top: 2px solid #e4e4e4;
@@ -18,11 +57,16 @@
     grid-row: 4/6;
 
     &__singleProject
-        width: 50%;
+        width: 85rem;
         height: 50rem;
         background-color: white;
         border-radius: 20px;
         display: flex;
+        margin-bottom: 20rem;
+
+        @include projectMQ
+  
+    
 
         &-desc
             display: flex;
@@ -31,6 +75,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            @media(max-width: 750px)
+                    width: 100%;
+                    
+            
 
             &-text
                 display: flex;
@@ -38,6 +86,7 @@
                 align-items: center;
                 justify-content: center;
                 width: 70%;
+               
 
                 &-header
                     font-family: 'IBM Plex Sans', sans-serif;
@@ -53,22 +102,16 @@
                     font-weight: 300;
                     margin-bottom: 1.5rem;
                     letter-spacing: .1rem;
+                    text-align: center;
 
-            &-button                
-                background: linear-gradient(to right, #55FFEA 0%,  #46DFCD  100%);
-                margin: 10px;
-                padding: 15px 25px;
-                font-family: 'IBM Plex Sans', sans-serif;
-                font-size: 1.2rem;
-                letter-spacing: .1rem;
-                text-align: center;
-                text-transform: uppercase;
-                transition: 0.5s;
-                width: 50%;
-                color: white;            
-                box-shadow: 0 0 20px #eee;
-                border-radius: 10px;
-                display: block;
+            &-button  
+                @include mainButton              
+                background: linear-gradient(to right,#46DFCD  0%, #55FFEA   100%);
+                &-purple
+                    @include mainButton              
+                    background: linear-gradient(to right, #6E75F9 0%,  #9B9CF9  100%);
+
+                
           
 
           
@@ -78,26 +121,46 @@
         &-img
 
             background-image: url('https://cdn.pixabay.com/photo/2014/09/14/18/04/dandelion-445228_960_720.jpg');
-            width: 50%;
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
             border-radius: 20px 0 0 20px;
+            @include item
+
+            @media(max-width: 750px)
+                width: 100%;
+                border-radius: 20px 20px 0 0;
+            
 
             &-right
+                @include item
                 border-radius: 0 20px 20px 0;
-                background-image: url('https://cdn.pixabay.com/photo/2014/09/14/18/04/dandelion-445228_960_720.jpg');
-                width: 50%;
-                height: 100%;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
+                background-image: url('https://images.pexels.com/photos/2166927/pexels-photo-2166927.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+                @media(max-width: 750px)
+                    width: 100%;
+                    border-radius: 20px 20px 0 0;
+                    order: -1;
+            &-third
+                  
 
+                @include item
+                border-radius: 20px 0 0 20px;
+                background-image: url('https://images.pexels.com/photos/2318025/pexels-photo-2318025.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260x');
+                @media(max-width: 750px)
+                    width: 100%;
+                    border-radius: 20px 20px 0 0;
+                    order: -1;  
+
+            &-last
+                @include item
+                border-radius: 0 20px 20px 0;
+                background-image: url('https://images.pexels.com/photos/3490347/pexels-photo-3490347.jpeg?cs=srgb&dl=pexels-mister-mister-3490347.jpg&fm=jpg');
+                background-position: left;
+                @media(max-width: 750px)
+                    width: 100%;
+                    border-radius: 20px 20px 0 0;
+                    order: -1;  
+                
 
         
-
-    
+ 
     
     
     

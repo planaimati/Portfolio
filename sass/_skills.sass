@@ -23,9 +23,10 @@
         &-skill
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             flex-direction: column;
             width: 100%;
+            height: 30rem;
             &-icon
                 i
                     font-size: 6rem;
@@ -42,9 +43,12 @@
             &-text 
                 margin-top: 3rem;
                 p
-                    font-size: 1.6rem;
-                    text-align: center;
-                    color: $main-dark-color;
+                    font-family: 'IBM Plex Sans', sans-serif;
+                    font-size: 1.8rem;
+                    font-weight: 300;
+                    
+                    letter-spacing: .1rem;
+                    color: #626881;
 @media (min-width: 400px) and (max-width: 1024px)
     .skills
         &__container
