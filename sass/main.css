@@ -236,8 +236,8 @@ body {
 
 .about__container-imgcontainer {
   position: relative;
-  width: 50vh;
-  height: 40vh;
+  width: 60vh;
+  height: 50vh;
 }
 
 .about__container-imgcontainer:hover img {
@@ -347,7 +347,7 @@ body {
 
 @media (max-width: 485px) {
   .about__container-imgcontainer {
-    width: 80%;
+    width: 95%;
   }
   .about__container-textcontainer {
     margin: 4.5rem 2.5rem 0 2.5rem;
@@ -530,6 +530,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  height: 20rem;
 }
 
 .skills__container-skill-icon i {
@@ -554,6 +555,8 @@ body {
 
 .skills__container-skill-text {
   margin-top: 3rem;
+  width: 100%;
+  padding: 1rem;
 }
 
 .skills__container-skill-text p {
@@ -562,6 +565,7 @@ body {
   font-weight: 300;
   letter-spacing: .1rem;
   color: #626881;
+  text-align: center;
 }
 
 @media (min-width: 400px) and (max-width: 1024px) {
@@ -876,6 +880,7 @@ body {
 }
 
 .footer__email p {
+  margin-top: 1rem;
   font-size: 2rem;
 }
 
